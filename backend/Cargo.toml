@@ -1,11 +1,23 @@
 [package]
-name = "frontend"
-version = "0.0.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "backend"
+version = "0.1.0"
+authors = ["Joword <joword@my.swjtu.edu.cn>"]
 edition = "2021"
+rust-version = "1.75"
+readme = "../README.md"
+publish = false
+keywords = ['middle platform', 'AI', 'medic']
+licence = "Apache 2.0"
+build = "build.rs"
+exclude = ['icons/*']
+repository = "https://github.com/Joword/demo-rust"
+description = "a medic AI of platform as a service"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[source.crates-io]
+replace-with = 'ustc'
+
+[source.ustc]
+registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 
 [build-dependencies]
 tauri-build = { version = "1", features = [] }
@@ -16,5 +28,4 @@ serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 
 [features]
-# This feature is used for production builds or when a dev server is not specified, DO NOT REMOVE!!
 custom-protocol = ["tauri/custom-protocol"]
