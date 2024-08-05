@@ -2,7 +2,8 @@
 name = "backend"
 version = "0.1.0"
 edition = "2021"
+publish = false
 
 [dependencies]
 tokio = { version = "1", features = ["full"] }
-mini-redis = "0.4"
+axum ={ version = "*", features = ["full"]}
